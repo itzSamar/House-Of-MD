@@ -41,7 +41,7 @@ export function ContactPage() {
                     const body = encodeURIComponent(
                       `Name: ${name}\nEmail: ${email}\n\n${message}`,
                     )
-                    window.location.href = `mailto:houseofmd_official@instagram.com?subject=${subject}&body=${body}`
+                    window.location.href = `mailto:houseofmdofficial@gmail.com?subject=${subject}&body=${body}`
                   }}
                 >
                   <div className="grid gap-4 sm:grid-cols-2">
@@ -66,7 +66,7 @@ export function ContactPage() {
                     Email us
                   </button>
                   <p className="text-xs leading-5 text-neutral-400">
-                    Tip: replace the email address with your business email when ready.
+                    Email goes to houseofmdofficial@gmail.com.
                   </p>
                 </form>
               </div>

@@ -27,29 +27,25 @@ export function SiteFooter() {
                 className="rounded-full px-4 py-2 text-neutral-200 ring-1 ring-white/10 hover:bg-white/5"
                 to="/contact"
               >
-                Book an appointment
+                  Contact
               </Link>
             </div>
           </div>
 
-          <div className="grid gap-8 sm:grid-cols-2 md:col-span-7 md:grid-cols-3">
-            <FooterCol title="Shop">
-              <FooterLink to="/shop?cat=Pre%20Stitched%20Sarees">Pre stitched sarees</FooterLink>
-              <FooterLink to="/shop?cat=Lehengas">Lehengas</FooterLink>
-              <FooterLink to="/shop?cat=Suits">Suits</FooterLink>
-              <FooterLink to="/shop?cat=Fusion%20Sets">Fusion sets</FooterLink>
-            </FooterCol>
-            <FooterCol title="Company">
-              <FooterLink to="/about">About</FooterLink>
-              <FooterLink to="/events">Events</FooterLink>
+          <div className="grid gap-8 sm:grid-cols-2 md:col-span-7 md:grid-cols-2">
+            <FooterCol title="Explore">
               <FooterLink to="/gallery">Gallery</FooterLink>
-              <FooterLink to="/visit">Visit</FooterLink>
               <FooterLink to="/contact">Contact</FooterLink>
             </FooterCol>
-            <FooterCol title="Policies">
-              <FooterLink to="/policies">Shipping & returns</FooterLink>
-              <FooterLink to="/policies">Sizing</FooterLink>
-              <FooterLink to="/policies">Care</FooterLink>
+            <FooterCol title="Social">
+              <a
+                className="text-sm text-neutral-400 hover:text-neutral-200"
+                href="https://www.instagram.com/houseofmd_official/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Instagram
+              </a>
             </FooterCol>
           </div>
         </div>
@@ -57,9 +53,6 @@ export function SiteFooter() {
         <div className="flex flex-col gap-3 border-t border-white/5 py-8 text-xs text-neutral-500 md:flex-row md:items-center md:justify-between">
           <div>© {new Date().getFullYear()} House of MD. All rights reserved.</div>
           <div className="flex items-center gap-4">
-            <Link className="hover:text-neutral-300" to="/policies">
-              Policies
-            </Link>
             <a
               className="hover:text-neutral-300"
               href="https://www.instagram.com/houseofmd_official/"

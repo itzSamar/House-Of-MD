@@ -17,11 +17,7 @@ export function SiteNav() {
           </Link>
 
           <nav className="hidden items-center gap-8 md:flex">
-            <NavItem to="/shop">Shop</NavItem>
-            <NavItem to="/events">Events</NavItem>
             <NavItem to="/gallery">Gallery</NavItem>
-            <NavItem to="/about">About</NavItem>
-            <NavItem to="/visit">Visit</NavItem>
             <NavItem to="/contact">Contact</NavItem>
           </nav>
 
@@ -34,8 +30,8 @@ export function SiteNav() {
             >
               Instagram
             </a>
-            <ButtonLink to="/shop" variant="primary">
-              Shop now
+            <ButtonLink to="/contact" variant="primary">
+              Contact
             </ButtonLink>
           </div>
         </div>

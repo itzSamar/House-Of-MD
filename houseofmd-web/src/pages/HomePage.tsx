@@ -4,7 +4,6 @@ import { ButtonLink } from '../components/Button'
 import { Container } from '../components/Container'
 import { assets } from '../lib/assets'
 import { galleryImages } from '../lib/gallery'
-import { products } from '../lib/products'
 
 export function HomePage() {
   return (
@@ -41,8 +40,11 @@ export function HomePage() {
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-3">
-                <ButtonLink to="/shop" variant="primary">
-                  Explore collections
+                <ButtonLink to="/gallery" variant="primary">
+                  View gallery
+                </ButtonLink>
+                <ButtonLink to="/contact" variant="secondary">
+                  Contact
                 </ButtonLink>
                 <a
                   className="inline-flex h-11 items-center justify-center rounded-full bg-white/5 px-5 text-sm font-medium text-neutral-100 ring-1 ring-white/10 hover:bg-white/8"
@@ -83,10 +85,10 @@ export function HomePage() {
                       </div>
                     </div>
                     <Link
-                      to="/shop"
+                      to="/gallery"
                       className="rounded-full bg-white/10 px-4 py-2 text-sm text-neutral-100 ring-1 ring-white/15 hover:bg-white/15"
                     >
-                      Shop
+                      Gallery
                     </Link>
                   </div>
                 </div>
@@ -95,133 +97,31 @@ export function HomePage() {
           </div>
         </Container>
       </section>
-
       <section className="py-14 md:py-18">
         <Container>
-          <div className="flex items-end justify-between gap-6">
-            <div>
-              <div className="text-xs font-semibold tracking-[0.22em] text-amber-200">
-                COLLECTIONS
-              </div>
-              <h2 className="mt-3 text-2xl font-semibold tracking-tight text-neutral-50">
-                Shop by occasion & silhouette
-              </h2>
+          <div className="rounded-3xl bg-gradient-to-b from-white/8 to-white/3 p-8 ring-1 ring-white/10">
+            <div className="text-xs font-semibold tracking-[0.22em] text-amber-200">
+              IMPORTANT
             </div>
-            <ButtonLink to="/shop" variant="secondary" size="sm">
-              View all
-            </ButtonLink>
-          </div>
-
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
-            <CollectionCard
-              title="Pre stitched sarees"
-              desc="Effortless drape, evening-ready"
-              to="/shop?cat=Pre%20Stitched%20Sarees"
-            />
-            <CollectionCard
-              title="Lehengas"
-              desc="Reception & wedding edits"
-              to="/shop?cat=Lehengas"
-            />
-            <CollectionCard
-              title="Fusion sets"
-              desc="Modern Indo western silhouettes"
-              to="/shop?cat=Fusion%20Sets"
-            />
-          </div>
-        </Container>
-      </section>
-
-      <section className="py-14 md:py-18">
-        <Container>
-          <div className="flex items-end justify-between gap-6">
-            <div>
-              <div className="text-xs font-semibold tracking-[0.22em] text-amber-200">
-                FEATURED
-              </div>
-              <h2 className="mt-3 text-2xl font-semibold tracking-tight text-neutral-50">
-                New & standout pieces
-              </h2>
+            <div className="mt-3 text-xl font-semibold text-neutral-50">
+              Event tomorrow — we’re hosting.
             </div>
-          </div>
-
-          <div className="mt-8 grid gap-6 md:grid-cols-2">
-            {products.map((p) => (
-              <Link
-                key={p.slug}
-                to={`/shop/${p.slug}`}
-                className="group overflow-hidden rounded-2xl bg-white/5 ring-1 ring-white/10 hover:bg-white/[0.07]"
+            <p className="mt-3 max-w-2xl text-sm leading-6 text-neutral-300">
+              Details (time/location) will be posted shortly. For RSVP and info, contact
+              us or DM on Instagram.
+            </p>
+            <div className="mt-6 flex flex-wrap items-center gap-3">
+              <ButtonLink to="/contact" variant="primary">
+                Contact for details
+              </ButtonLink>
+              <a
+                className="inline-flex h-11 items-center justify-center rounded-full bg-white/5 px-5 text-sm font-medium text-neutral-100 ring-1 ring-white/10 hover:bg-white/8"
+                href="https://www.instagram.com/houseofmd_official/"
+                target="_blank"
+                rel="noreferrer"
               >
-                <div className="grid md:grid-cols-5">
-                  <div className="relative md:col-span-2">
-                    <img
-                      src={assets[p.image]}
-                      alt={p.title}
-                      className="h-56 w-full object-cover transition duration-700 group-hover:scale-[1.03] md:h-full"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/55 via-transparent to-transparent" />
-                  </div>
-                  <div className="p-6 md:col-span-3">
-                    <div className="text-xs tracking-[0.22em] text-neutral-400">
-                      {p.categories.slice(0, 2).join(' • ')}
-                    </div>
-                    <div className="mt-2 text-lg font-semibold text-neutral-50">
-                      {p.title}
-                    </div>
-                    <div className="mt-2 text-sm leading-6 text-neutral-300">
-                      {p.subtitle}
-                    </div>
-                    <div className="mt-4 flex items-center justify-between">
-                      <div className="text-sm text-neutral-300">
-                        {p.priceFrom ? `From $${p.priceFrom}` : 'Price on request'}
-                      </div>
-                      <div className="text-sm font-medium text-amber-200">
-                        View details →
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      <section className="py-14 md:py-18">
-        <Container>
-          <div className="grid items-center gap-10 md:grid-cols-12">
-            <div className="md:col-span-5">
-              <div className="text-xs font-semibold tracking-[0.22em] text-amber-200">
-                APPOINTMENT SHOPPING
-              </div>
-              <h2 className="mt-3 text-2xl font-semibold tracking-tight text-neutral-50">
-                Try-on, styling, and a couture-level fit.
-              </h2>
-              <p className="mt-4 text-sm leading-6 text-neutral-300">
-                Visit us in Dublin, CA for a personalized selection based on your occasion.
-                We’ll help you style the full look—from drape to jewelry pairing.
-              </p>
-              <div className="mt-6 flex flex-wrap items-center gap-3">
-                <ButtonLink to="/visit" variant="secondary">
-                  Visit details
-                </ButtonLink>
-                <ButtonLink to="/contact" variant="primary">
-                  Book an appointment
-                </ButtonLink>
-              </div>
-            </div>
-
-            <div className="md:col-span-7">
-              <div className="relative overflow-hidden rounded-3xl ring-1 ring-white/10">
-                <img
-                  src={assets['houseofmd-01']}
-                  alt="House of MD festive couture"
-                  className="h-[420px] w-full object-cover"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/70 via-neutral-950/10 to-transparent" />
-              </div>
+                DM on Instagram
+              </a>
             </div>
           </div>
         </Container>
@@ -275,28 +175,6 @@ function Kpi({ title, desc }: { title: string; desc: string }) {
       <div className="text-sm font-semibold text-neutral-100">{title}</div>
       <div className="mt-1 text-xs leading-5 text-neutral-400">{desc}</div>
     </div>
-  )
-}
-
-function CollectionCard({
-  title,
-  desc,
-  to,
-}: {
-  title: string
-  desc: string
-  to: string
-}) {
-  return (
-    <Link
-      to={to}
-      className="group relative overflow-hidden rounded-3xl bg-gradient-to-b from-white/8 to-white/3 p-7 ring-1 ring-white/10 hover:from-white/10 hover:to-white/4"
-    >
-      <div className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-amber-200/15 blur-3xl transition group-hover:bg-amber-200/20" />
-      <div className="text-lg font-semibold text-neutral-50">{title}</div>
-      <div className="mt-2 text-sm leading-6 text-neutral-300">{desc}</div>
-      <div className="mt-5 text-sm font-medium text-amber-200">Shop now →</div>
-    </Link>
   )
 }
 
