@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>House of MD</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      ;(function () {
+        // GitHub Pages SPA redirect:
+        // /<repo>/some/path -> /<repo>/?/some/path
+        var segments = window.location.pathname.split('/')
+        var repo = segments[1] || ''
+        var rest = segments.slice(2).join('/')
+        var base = '/' + repo + '/'
+        var target =
+          base +
+          '?/' +
+          rest +
+          (window.location.search ? window.location.search.replace('?', '&') : '') +
+          window.location.hash
+        window.location.replace(target)
+      })()
+    </script>
+  </body>
+</html>
+
