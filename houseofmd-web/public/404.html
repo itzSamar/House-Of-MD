@@ -10,11 +10,21 @@
     <script type="text/javascript">
       ;(function () {
         // GitHub Pages SPA redirect:
-        // /<repo>/some/path -> /<repo>/?/some/path
+        // - Project pages: /<repo>/some/path -> /<repo>/?/some/path
+        // - Custom domain: /some/path -> /? /some/path
+        var isGithubIo = window.location.hostname.endsWith('github.io')
         var segments = window.location.pathname.split('/')
-        var repo = segments[1] || ''
-        var rest = segments.slice(2).join('/')
-        var base = '/' + repo + '/'
+        var base = '/'
+        var rest = ''
+
+        if (isGithubIo) {
+          var repo = segments[1] || ''
+          base = '/' + repo + '/'
+          rest = segments.slice(2).join('/')
+        } else {
+          rest = segments.slice(1).join('/')
+        }
+
         var target =
           base +
           '?/' +
