@@ -19,3 +19,10 @@ body {
 ::selection {
   background: rgba(212, 175, 55, 0.35);
 }
+
+/* Reduce easy drag-save for media (deterrent only) */
+img,
+video {
+  -webkit-user-drag: none;
+  user-select: none;
+}
