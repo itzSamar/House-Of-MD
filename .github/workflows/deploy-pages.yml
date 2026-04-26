@@ -34,8 +34,6 @@ jobs:
 
       - name: Build
         working-directory: houseofmd-web
-        env:
-          VITE_BASE: /
         run: npm run build
 
       - name: Configure Pages
